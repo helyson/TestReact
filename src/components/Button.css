@@ -1,0 +1,39 @@
+:root {
+  --light-gray: #dcdcdc;
+  --light-dark: #cdcdcd;
+  --regular-blue: #2684ff;
+  --light-blue: #6eaaf8;
+  --bold-gray: #808080
+}
+
+.button {
+  width: 100px;
+  height: 30px;
+  border-radius: 2px;
+  border: 0;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button-default {
+  background-color: var(--light-gray);
+  color: var(--bold-gray)
+}
+
+.button-default:hover {
+  background-color: var(--light-dark);
+}
+
+.button-primary {
+  background-color: var(--regular-blue);
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: var(--light-blue);
+}

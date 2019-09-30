@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-const styles = require("./App.module.css"); 
+import React, { useReducer } from 'react'
+
+import { reducer } from './reducer'
+import { initialState } from './initialState'
+import { Context } from './storeProvider'
+
+import Battlefield from './components/Battlefield'
 
 const App: React.FC = () => {
-  return (
-    <div className={styles.App}>
-      <header className={styles.AppHeader}>
-        <img src={logo} className={styles.AppLogo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className={styles.AppLink}
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [ state, dispatch ] = useReducer(reducer, initialState)
+
+	return (
+		<Context.Provider value={{ state, dispatch }}>
+			{
+				state.error ? (
+					<p>Ocurrio un problema al intentar cargar la aplicacion</p>
+				) : (
+					<Battlefield />
+				)
+			}
+		</Context.Provider>
+	)
 }
 
-export default App;
+export default App

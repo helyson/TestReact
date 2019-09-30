@@ -1,0 +1,21 @@
+.lost-battle {
+  color: red;
+}
+
+.won-battle {
+  color: green;
+}
+
+.character {
+  display: grid;
+  justify-items: center;
+}
+
+.character img {
+  width: 96px;
+  height: 96px;
+}
+
+.character-info:nth-child(2n+1) {
+  color: red;
+}
